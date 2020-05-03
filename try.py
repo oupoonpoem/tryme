@@ -5,10 +5,19 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense,LSTM
 import matplotlib.pyplot as plt
+import csv
 plt.style.use('fivethirtyeight')
 
-df=pd.DataReader('sales-cut.csv',data_source='yahoo',start='2012-01-01',end='2019-12-17')
-df
+with open('sales-cut.csv','r') as csv_file:
+    df = csv.reader(csv_file,delimiter='\t')
+    
+    for line in csv_reader:
+        print(line)
+
+
+
+#df=pd.DataReader('sales-cut.csv',data_source='yahoo',start='2012-01-01',end='2019-12-17')
+#df
 
 df.shape
 
